@@ -20,8 +20,8 @@ var send = {
 			var Auth1 = cifrar(response.data, document.getElementById("password").value);
 
 			httpApp({
-				//url: "http://ldapauthenticationbdb-bdb-aut-des.s-cloudapps.bancodebogota.net/login",
-				url: "http://localhost:8090/login",
+				url: "http://ldapauthenticationbdb-bdb-aut-des.s-cloudapps.bancodebogota.net/login",
+				//url: "http://localhost:8090/login",
 				method: "GET",
 				withCredentials: true,
 				headers: {'Authorization': Auth0 + ":" + Auth1},
@@ -41,3 +41,4 @@ var send = {
 		});		
 	}
 }
+	
