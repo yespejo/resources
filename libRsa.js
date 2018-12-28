@@ -29,7 +29,6 @@ var send = {
 				}			
 			}).then(function successCallback(response) {
 				localStorage.setItem("Authorization", response.headers('Authorization'));
-				console.log(localStorage.getItem("Authorization"));
 				successFunction(response);
 			}, function errorCallback(response) {
 				errorFunction(response);
