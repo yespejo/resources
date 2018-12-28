@@ -28,12 +28,11 @@ var send = {
 					return data;
 				}			
 			}).then(function successCallback(response) {
-				  console.log(response.headers('Authorization'));
-				console.log(response);
-				successFunction(response.data);
+				localStorage.setItem("Authorization", response.headers('Authorization'));
+				console.log(localStorage.getItem("Authorization"));
+				successFunction(response);
 			}, function errorCallback(response) {
-				console.log(response)
-				errorFunction(response.statusText);
+				errorFunction(response);
 			});
 		}, function errorCallback(response) {
 		});		
