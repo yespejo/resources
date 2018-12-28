@@ -21,7 +21,6 @@ var send = {
 
 			httpApp({
 				url: "http://ldapauthenticationbdb-bdb-aut-des.s-cloudapps.bancodebogota.net/login",
-				//url: "http://localhost:8090/login",
 				method: "GET",
 				withCredentials: true,
 				headers: {'Authorization': Auth0 + ":" + Auth1},
@@ -29,16 +28,14 @@ var send = {
 					return data;
 				}			
 			}).then(function successCallback(response) {
+				  console.log(response.headers('Authorization'));
 				console.log(response);
 				successFunction(response.data);
 			}, function errorCallback(response) {
 				console.log(response)
 				errorFunction(response.statusText);
 			});
-
-
 		}, function errorCallback(response) {
 		});		
 	}
 }
-	
